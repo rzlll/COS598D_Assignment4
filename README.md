@@ -1,6 +1,8 @@
-# ADAPTIVE LEARNED BLOOM FILTER (ADA-BF): EFFICIENT UTILIZATION OF THE CLASSIFIER
+# ADAPTIVE LEARNED BLOOM FILTER (ADA-BF)
 
-The python files include the implementation of the Bloom filter, learned Bloom filter, Ada-BF and disjoint Ada-BF, and print the size of False Positives of the corresponding algorithm.
+This a PyTorch implementation of the Adaptive Learned Bloom Filter[1] and folked from https://github.com/DAIZHENWEI/Ada-BF. The python files include the implementation of the Bloom filter, learned Bloom filter, Ada-BF and disjoint Ada-BF, and print the size of False Positives of the corresponding algorithm.
+
+[1] Dai, Z. and Shrivastava, A., 2019. Adaptive learned Bloom filter (Ada-BF): Efficient utilization of the classifier. arXiv preprint arXiv:1910.09131.
 
 **Input arguments**: 
 - `--data_path`: a csv file includes the items, scores and labels; `--size_of_Ada_BF`: size of Bloom filter;
