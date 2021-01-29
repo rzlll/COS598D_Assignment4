@@ -25,9 +25,10 @@ Your task is to complete function to search the optimal parameters for learned B
 - Run Ada-BF and search the best *g* in [8,12] and *c* in [1.6, 2.5]:\
 -`python Ada-BF.py --data_path ./Datasets/URL_data.csv --size_of_Ada_BF 200000  --num_group_min 8  --num_group_max 12  --c_min 1.6  --c_max 2.5`
 
-**Your Tasks**:
-1. Ipm
-2.
-Compare FPR of Bloom filter (BF), learned BF, and Ada-BF with memory budget using the provided two datasets in /Datasets/. Please refer to the figure 4 to report your results. 
+## Your Tasks**:
+-[] Examine your the ML classification logit scores for the URL dataset in `/Datasets/`.
+-[] Implement `Find_Optimal_Parameters` function in `learned_Bloom_filter.py` and `Ada_BF.py`.
+-[] Compare FPR of Bloom filter (BF), learned BF, and Ada-BF with memory budget using the provided URL dataset. Please refer to the figure 4 of [1] to plot your results. 
+=[] Analyze your results and explore the cases when Ada-BF losses its advantages.
 
 
