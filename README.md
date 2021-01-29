@@ -6,6 +6,8 @@ The python files include the implementation of the 1) Bloom filter (BF), partial
 
 Your task is to complete function to search the optimal parameters for learned BF and  Ada-BF. Specfically, you are required to use cross validataion to find the best threshold for the ML classifier output scores for learned BF in `learned_Bloom_filter.py`; and find the best number of groups (g in [1]) and the best threshold of density ratio (c in [1]) in `Ada_BF.py`. 
 
+**Reference**
+
 [1] Dai, Z. and Shrivastava, A., 2019. Adaptive learned Bloom filter (Ada-BF): Efficient utilization of the classifier. arXiv preprint arXiv:1910.09131.
 
 **Input arguments**: 
