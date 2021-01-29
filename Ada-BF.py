@@ -87,6 +87,9 @@ def Find_Optimal_Parameters(c_min, c_max, num_group_min, num_group_max, R_sum, t
     k_min = 0
     for k_max in range(num_group_min, num_group_max+1):
         for c in c_set:
+        '''
+        Mask the following lines
+        '''
             tau = sum(c ** np.arange(0, k_max - k_min + 1, 1))
             n = positive_sample.shape[0]
             hash_len = R_sum
@@ -130,8 +133,10 @@ def Find_Optimal_Parameters(c_min, c_max, num_group_min, num_group_max, R_sum, t
                 bloom_filter_opt = bloom_filter
                 thresholds_opt = thresholds
                 k_max_opt = k_max
-
-    # print('Optimal FPs: %f, Optimal c: %f, Optimal num_group: %d' % (FP_opt, c_opt, num_group_opt))
+            
+        '''
+        Ends here
+        '''
     return bloom_filter_opt, thresholds_opt, k_max_opt
 
 
