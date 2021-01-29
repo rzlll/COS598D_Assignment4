@@ -41,6 +41,10 @@ def Find_Optimal_Parameters(max_thres, min_thres, R_sum, train_negative, positiv
         n = len(query)
         bloom_filter = BloomFilter(n, R_sum)
         bloom_filter.insert(query)
+        
+        '''
+        Mask the following lines
+        '''
         ML_positive = train_negative.loc[(train_negative['score'] > threshold),'query']
         bloom_negative = train_negative.loc[(train_negative['score'] <= threshold),'query']
         BF_positive = bloom_filter.test(bloom_negative, single_key=False)
@@ -50,6 +54,9 @@ def Find_Optimal_Parameters(max_thres, min_thres, R_sum, train_negative, positiv
             FP_opt = FP_items
             thres_opt = threshold
             bloom_filter_opt = bloom_filter
+        '''
+        Ends here
+        '''
     return bloom_filter_opt, thres_opt
 
 
