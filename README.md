@@ -1,10 +1,8 @@
 # ADAPTIVE LEARNED BLOOM FILTER (ADA-BF)
 
-This a PyTorch implementation of the Adaptive Learned Bloom Filter [1]. 
+The python files include the implementation of the 1) Bloom filter (BF), 2) partial implementation of learned BF, and 3) partial implementation of Ada-BF, and 4) printing the size of False Positives of the corresponding algorithm.
 
-The python files include the implementation of the 1) Bloom filter (BF), partial implementation of 2) learned BF, and partial implementation of3) Ada-BF, and print the size of False Positives of the corresponding algorithm.
-
-Your task is to complete function to search the optimal parameters for learned BF and  Ada-BF. Specfically, you are required to use cross validataion to find the best threshold for the ML classifier output scores for learned BF in `learned_Bloom_filter.py`; and find the best number of groups (*g* in [1]) and the best threshold of density ratio (*c* in [1]) in `Ada_BF.py`. 
+Your task is to complete function to search the optimal parameters for learned BF and Ada-BF. Specfically, you are required to use cross validataion to find the best threshold for the ML classifier output scores for learned BF in `learned_Bloom_filter.py`; and find the best number of groups (*g* in [1]) and the best threshold of density ratio (*c* in [1]) in `Ada_BF.py`. 
 
 **Reference**
 
@@ -26,8 +24,8 @@ Your task is to complete function to search the optimal parameters for learned B
 -`python Ada-BF.py --data_path ./Datasets/URL_data.csv --size_of_Ada_BF 200000  --num_group_min 8  --num_group_max 12  --c_min 1.6  --c_max 2.5`
 
 ## Your Tasks:
-- [ ] Examine your the ML classification logit scores for the URL dataset in `/Datasets/`.
-- [ ] Implement `Find_Optimal_Parameters` function in `learned_Bloom_filter.py` and `Ada_BF.py`.
+- [ ] Examine the ML classification logit scores for the URL dataset in `/Datasets/`.
+- [ ] Implement the `Find_Optimal_Parameters` functions in `learned_Bloom_filter.py` and `Ada_BF.py`.
 - [ ] Compare FPR of Bloom filter (BF), learned BF, and Ada-BF with memory budget using the provided URL dataset. Please refer to the figure 4 of [1] to plot your results. 
 - [ ] Analyze your results and explore the cases when Ada-BF losses its advantages.
 
