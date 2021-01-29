@@ -15,14 +15,14 @@ Your task is to complete function to search the optimal parameters for learned B
 **Input arguments**: 
 - `--data_path`: a csv file includes the items, scores and labels; `--size_of_Ada_BF`: size of Bloom filter;
 - (for learned Bloom filter) `--threshold_min` and `--threshold_max` provide the range of the score threshold (between `threshold_min` and `threshold_max`). Items with score larger than the threshold are identified as keys;
-- (for Ada-BF) `--num_group_min` and `--num_group_max` give the range of number of groups to divide (range of *g*); `--c_min` and `--c_max` provide the range of *c* where *c=m_j/m_{j+1}*
+- (for Ada-BF) `--num_group_min` and `--num_group_max` give the range of number of groups to divide (range of *g*); `--c_min` and `--c_max` provide the range of *c* where *c=m_j/m_{j+1}* and note *c>1*.
 
 **Commands**:
-- Run Bloom filter:
+- Run Bloom filter:\
 ```python Bloom_filter.py --data_path ./Datasets/URL_data.csv --size_of_BF 200000```
-- Run learned Bloom filter and search the best threshold in [0.5, 0.95]: 
+- Run learned Bloom filter and search the best threshold in [0.5, 0.95]:\
 -`python learned_Bloom_filter.py --data_path ./Datasets/URL_data.csv --size_of_LBF 200000  --threshold_min 0.5   --threshold_max 0.95`
-- Run Ada-BF and search the best *g* in [8,12] and *c* in [1.6, 2.5]. Note *c>1*: 
+- Run Ada-BF and search the best *g* in [8,12] and *c* in [1.6, 2.5]:\
 -`python Ada-BF.py --data_path ./Datasets/URL_data.csv --size_of_Ada_BF 200000  --num_group_min 8  --num_group_max 12  --c_min 1.6  --c_max 2.5`
 
 **Your Tasks**:
