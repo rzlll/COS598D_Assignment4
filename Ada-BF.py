@@ -80,14 +80,6 @@ class Ada_BloomFilter():
 
 
 
-def R_size(count_key, count_nonkey, R0):
-    R = [0]*len(count_key)
-    R[0] = R0
-    for k in range(1, len(count_key)):
-        R[k] = max(int(count_key[k] * (np.log(count_nonkey[0]/count_nonkey[k])/np.log(0.618) + R[0]/count_key[0])), 1)
-    return R
-
-
 def Find_Optimal_Parameters(c_min, c_max, num_group_min, num_group_max, R_sum, train_negative, positive_sample):
     c_set = np.arange(c_min, c_max+10**(-6), 0.1)
     FP_opt = train_negative.shape[0]
