@@ -19,7 +19,7 @@ Your task is to complete function to search the optimal parameters for learned B
 
 **Commands**:
 - Run Bloom filter:
--`python Bloom_filter.py --data_path ./Datasets/URL_data.csv --size_of_BF 200000`
+```python Bloom_filter.py --data_path ./Datasets/URL_data.csv --size_of_BF 200000```
 - Run learned Bloom filter and search the best threshold in [0.5, 0.95]: 
 -`python learned_Bloom_filter.py --data_path ./Datasets/URL_data.csv --size_of_LBF 200000  --threshold_min 0.5   --threshold_max 0.95`
 - Run Ada-BF and search the best *g* in [8,12] and *c* in [1.6, 2.5]. Note *c>1*: 
