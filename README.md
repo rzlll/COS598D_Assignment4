@@ -7,16 +7,15 @@ This a PyTorch implementation of the Adaptive Learned Bloom Filter[1] and folked
 **Input arguments**: 
 - `--data_path`: a csv file includes the items, scores and labels; `--size_of_Ada_BF`: size of Bloom filter;
 - (for learned Bloom filter) `--threshold_min` and `--threshold_max` provide the range of the score threshold (between `threshold_min` and `threshold_max`). Items with score larger than the threshold are identified as keys;
-- (for Ada-BF and disjoint Ada-BF) `--num_group_min` and `--num_group_max` give the range of number of groups to divide (range of *g*
+- (for Ada-BF) `--num_group_min` and `--num_group_max` give the range of number of groups to divide (range of *g*
 ); `--c_min` and `--c_max` provide the range of *c* where *c=m_j/m_{j+1}*
 
 **Commands**:
 - Run Bloom filter: `python Bloom_filter.py --data_path ./Datasets/URL_data.csv --size_of_BF 200000`
 - Run learned Bloom filter: `python learned_Bloom_filter.py --data_path ./Datasets/URL_data.csv --size_of_LBF 200000  --threshold_min 0.5   --threshold_max 0.95`
 - Run Ada-BF: `python Ada-BF.py --data_path ./Datasets/URL_data.csv --size_of_Ada_BF 200000  --num_group_min 8  --num_group_max 12  --c_min 1.6  --c_max 2.5`
-- Run disjoint Ada-BF: `python disjoint_Ada-BF.py --data_path ./Datasets/URL_data.csv --size_of_Ada_BF 200000  --num_group_min 8  --num_group_max 12  --c_min 1.6  --c_max 2.5`
 
 **TO DO**:
-Compare FPR of Bloom filter (BF), learned BF, Ada-BF, and disjoint Ada-BF with memory budget using the provided two datasets in /Datasets/. Please refer to the figure 4 to report your results. 
+Compare FPR of Bloom filter (BF), learned BF, and Ada-BF with memory budget using the provided two datasets in /Datasets/. Please refer to the figure 4 to report your results. 
 
 
