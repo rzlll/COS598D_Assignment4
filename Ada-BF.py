@@ -87,9 +87,6 @@ def Find_Optimal_Parameters(c_min, c_max, num_group_min, num_group_max, R_sum, t
     k_min = 0
     for k_max in range(num_group_min, num_group_max+1):
         for c in c_set:
-        '''
-        Mask the following lines
-        '''
             tau = sum(c ** np.arange(0, k_max - k_min + 1, 1))
             n = positive_sample.shape[0]
             hash_len = R_sum
@@ -100,39 +97,11 @@ def Find_Optimal_Parameters(c_min, c_max, num_group_min, num_group_max, R_sum, t
             num_piece = int(num_negative / tau) + 1
             score = train_negative.loc[(train_negative['score'] <= thresholds[-1]), 'score']
             score = np.sort(score)
-            for k in range(k_min, k_max):
-                i = k - k_min
-                score_1 = score[score < thresholds[-(i + 1)]]
-                if int(num_piece * c ** i) < len(score_1):
-                    thresholds[-(i + 2)] = score_1[-int(num_piece * c ** i)]
+            
+        '''
+        Please finish the code to find bloom_filter_opt, thresholds_opt, k_max_opt
+        '''
 
-            query = positive_sample['query']
-            score = positive_sample['score']
-
-            for score_s, query_s in zip(score, query):
-                ix = min(np.where(score_s < thresholds)[0])
-                k = k_max - ix
-                bloom_filter.insert(query_s, k)
-            ML_positive = train_negative.loc[(train_negative['score'] >= thresholds[-2]), 'query']
-            query_negative = train_negative.loc[(train_negative['score'] < thresholds[-2]), 'query']
-            score_negative = train_negative.loc[(train_negative['score'] < thresholds[-2]), 'score']
-
-            test_result = np.zeros(len(query_negative))
-            ss = 0
-            for score_s, query_s in zip(score_negative, query_negative):
-                ix = min(np.where(score_s < thresholds)[0])
-                # thres = thresholds[ix]
-                k = k_max - ix
-                test_result[ss] = bloom_filter.test(query_s, k)
-                ss += 1
-            FP_items = sum(test_result) + len(ML_positive)
-            print('False positive items: %d, Number of groups: %d, c = %f' %(FP_items, k_max, round(c, 2)))
-
-            if FP_opt > FP_items:
-                FP_opt = FP_items
-                bloom_filter_opt = bloom_filter
-                thresholds_opt = thresholds
-                k_max_opt = k_max
             
         '''
         Ends here
