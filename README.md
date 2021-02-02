@@ -28,5 +28,6 @@ Your task is to complete function to search the optimal parameters for learned B
 - [ ] Implement the `Find_Optimal_Parameters` functions in `learned_Bloom_filter.py` and `Ada_BF.py`.
 - [ ] Compare FPR of Bloom filter (BF), learned BF, and Ada-BF with memory budget using the provided URL dataset. Please refer to the figure 4 of [1] to plot your results. 
 - [ ] Analyze your results and explore the cases when Ada-BF losses its advantages.
+- [ ] You are required to submit a report to show the comparison reults, discuss the results, and analyze the limitation of Ada-BF.
 
 
