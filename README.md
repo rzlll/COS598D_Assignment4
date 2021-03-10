@@ -26,7 +26,7 @@ Your task is to complete function to search the optimal parameters for learned B
 ## Your Tasks:
 - [ ] Examine the ML classification logit scores for the URL dataset in `/Datasets/` by ploting the scores as a histogram using `matplotlib.pyplot.hist`.
 - [ ] Implement the `Find_Optimal_Parameters` functions in `learned_Bloom_filter.py` and `Ada_BF.py`.
-- [ ] Compare FPR of Bloom filter (BF), learned BF, and Ada-BF with differnt memory budgets (Hash table sizes) using the provided URL dataset. Please refer to the figure 4 of [1] to plot your results. 
+- [ ] Compare FPR of Bloom filter (BF), learned BF, and Ada-BF with differnt memory budgets (Hash table sizes) using the provided URL dataset. To change the memory budget, you can set it by `--size_of_Ada_BF`. Please refer to the figure 4 of [1] to select the suitable range for memory budget and plot your results.
 - [ ] You are required to submit a report to show the comparison reults, discuss the results, and analyze the limitation of Ada-BF (i.e. explore the cases when Ada-BF losses its advantages) .
 
 
