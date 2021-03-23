@@ -132,5 +132,5 @@ if __name__ == '__main__':
         test_result[ss] = bloom_filter_opt.test(query_s, k)
         ss += 1
     FP_items = sum(test_result) + len(ML_positive)
-    FPR = FP_items/len(negative_sample['query'])
-    print('False positive items: {}; FPR: {}; Size of quries: {}'.format(FP_items, FPR, len(negative_sample['query'])))
+    FPR = FP_items/negative_sample.shape[0]
+    print('False positive items: {}; FPR: {}; Size of quries: {}'.format(FP_items, FPR, negative_sample.shape[0])))
