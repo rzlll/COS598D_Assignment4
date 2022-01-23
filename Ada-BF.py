@@ -120,8 +120,8 @@ if __name__ == '__main__':
     
     '''Stage 2: Run Ada-BF on all the samples'''
     ### Test Queries
-    ML_positive = negative_sample.loc[(negative_sample['score'] >= thresholds_opt[-2]), 'query']
-    query_negative = negative_sample.loc[(negative_sample['score'] < thresholds_opt[-2]), 'query']
+    ML_positive = negative_sample.loc[(negative_sample['score'] >= thresholds_opt[-2]), 'url']
+    query_negative = negative_sample.loc[(negative_sample['score'] < thresholds_opt[-2]), 'url']
     score_negative = negative_sample.loc[(negative_sample['score'] < thresholds_opt[-2]), 'score']
     test_result = np.zeros(len(query_negative))
     ss = 0
