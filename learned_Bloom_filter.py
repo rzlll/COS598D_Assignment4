@@ -37,7 +37,7 @@ def Find_Optimal_Parameters(max_thres, min_thres, R_sum, train_negative, positiv
     FP_opt = train_negative.shape[0]
 
     for threshold in np.arange(min_thres, max_thres+10**(-6), 0.01):
-        query = positive_sample.loc[(positive_sample['score'] <= threshold),'query']
+        query = positive_sample.loc[(positive_sample['score'] <= threshold),'url']
         n = len(query)
         bloom_filter = BloomFilter(n, R_sum)
         bloom_filter.insert(query)
@@ -64,8 +64,8 @@ if __name__ == '__main__':
 
     '''Stage 2: Run LBF on all the samples'''
     ### Test queries
-    ML_positive = negative_sample.loc[(negative_sample['score'] > thres_opt), 'query']
-    bloom_negative = negative_sample.loc[(negative_sample['score'] <= thres_opt), 'query']
+    ML_positive = negative_sample.loc[(negative_sample['score'] > thres_opt), 'url']
+    bloom_negative = negative_sample.loc[(negative_sample['score'] <= thres_opt), 'url']
     score_negative = negative_sample.loc[(negative_sample['score'] < thres_opt), 'score']
     BF_positive = bloom_filter_opt.test(bloom_negative, single_key = False)
     FP_items = sum(BF_positive) + len(ML_positive)
